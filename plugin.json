@@ -1,7 +1,7 @@
 {
     "metadata": {
         "author": "doanthien123z",
-        "description": "..."
+        "description": "Kho tiện ích vBook của doanthien123z"
     },
     "data": [
         {
@@ -9,8 +9,8 @@
             "author": "doanthien123z",
             "version": 1,
             "source": "https://www.wnacg.ru",
-            "icon": "https://github.com/doanthien123z/vbook-extensions/main/wnacg/icon.png",
-            "url": "https://github.com/doanthien123z/vbook-extensions/main/wnacg/plugin.zip",
+            "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-extensions/main/wnacg/icon.png",
+            "url": "https://raw.githubusercontent.com/doanthien123z/vbook-extensions/main/wnacg/plugin.zip",
             "description": "Đọc truyện Wnacg",
             "tag": "nsfw",
             "type": "comic"
