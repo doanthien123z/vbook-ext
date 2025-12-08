@@ -14,6 +14,17 @@
             "description": "Đọc truyện Wnacg",
             "type": "comic",
             "locale": "zh_CN"
+        },
+        {
+            "name": "18MH_Novel",
+            "author": "doanthien123z",
+            "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/18mh_novel/plugin.zip",
+            "version": 1,
+            "source": "https://18mh.net",
+            "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/18mh_novel/icon.png",
+            "description": "Đọc tiểu thuyết tại 18mh.net",
+            "type": "chinese_novel",
+            "locale": "zh_CN"
         }
     ]
 }
