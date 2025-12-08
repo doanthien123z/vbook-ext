@@ -10,7 +10,7 @@
             "version": 1,
             "source": "https://www.wnacg.ru",
             "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/wnacg/icon.png",
-            "url": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/wnacg/plugin.zip",
+            "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/wnacg/plugin.zip",
             "description": "Đọc truyện Wnacg",
             "tag": "nsfw",
             "type": "comic"
