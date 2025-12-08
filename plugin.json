@@ -9,8 +9,8 @@
             "author": "doanthien123z",
             "version": 1,
             "source": "https://www.wnacg.ru",
-            "icon": "",
-            "url": "",
+            "icon": "https://github.com/doanthien123z/vbook-extensions/blob/main/wnacg/icon.png",
+            "url": "https://github.com/doanthien123z/vbook-extensions/blob/main/wnacg/plugin.zip",
             "description": "Đọc truyện Wnacg",
             "tag": "nsfw",
             "type": "comic"
