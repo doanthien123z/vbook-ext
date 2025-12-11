@@ -6,7 +6,7 @@
     "source": "https://jmd8.com",
     "regexp": "jmd8\\.com/.*",
     "description": "Đọc truyện tranh trên jmd8.com",
-    "locale": "vi_VN",
+    "locale": "zh_CN",
     "language": "javascript",
     "type": "comic",
     "tag": "nsfw"
