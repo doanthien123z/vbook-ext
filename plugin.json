@@ -13,7 +13,32 @@
             "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/wnacg/icon.png",
             "description": "Đọc truyện Wnacg",
             "type": "comic",
-            "locale": "zh_CN"
+            "locale": "zh_CN",
+            "tag": "nsfw"
+        },
+        {
+            "name": "18MH Novel",
+            "author": "doanthien123z",
+            "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/18mh_novel/plugin.zip",
+            "version": 1,
+            "source": "https://18mh.net/novel",
+            "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/18mh_novel/icon.png",
+            "description": "Đọc tiểu thuyết trên 18MH",
+            "type": "novel",
+            "locale": "zh_CN",
+            "tag": "nsfw"
+        },
+        {
+            "name": "18MH Comic",
+            "author": "doanthien123z",
+            "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/18mh_comic/plugin.zip",
+            "version": 1,
+            "source": "https://18mh.net/comic",
+            "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/18mh_comic/icon.png",
+            "description": "Đọc truyện tranh trên 18MH",
+            "type": "comic",
+            "locale": "zh_CN",
+            "tag": "nsfw"
         }
     ]
 }
