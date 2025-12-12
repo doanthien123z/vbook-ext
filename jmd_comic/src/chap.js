@@ -8,9 +8,6 @@ function execute(url) {
         let doc = response.html();
         let data = [];
         
-        let title = doc.select("h1").text();
-        let is3D = title.includes("[3D]");
-
         let el = doc.select(".content div img.lazy");
         if (el.size() === 0) {
             el = doc.select(".content img[data-original]");
@@ -31,12 +28,12 @@ function execute(url) {
                     !imgUrl.includes("logo") && 
                     !imgUrl.includes("icon")) {
                     
-                    if (is3D) {
-                        let workerUrl = "https://rotate-image.rotate-image.workers.dev/proxy?url=" + imgUrl;
-                        data.push(workerUrl);
-                    } else {
-                        data.push(imgUrl);
-                    }
+                    let encodedUrl = encodeURIComponent(imgUrl);
+                    
+                    let workerHost = "https://rotate-image.rotate-image.workers.dev"; 
+                    
+                    let workerUrl = workerHost + "/proxy?url=" + encodedUrl + "&v=TEST_V1";
+                    
                 }
             }
         }
