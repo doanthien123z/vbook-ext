@@ -9,6 +9,7 @@ function execute(url) {
         let data = [];
         
         let el = doc.select(".content div img.lazy");
+        
         if (el.size() === 0) {
             el = doc.select(".content img[data-original]");
         }
@@ -28,15 +29,11 @@ function execute(url) {
                     !imgUrl.includes("logo") && 
                     !imgUrl.includes("icon")) {
                     
-                    let encodedUrl = encodeURIComponent(imgUrl);
-                    
-                    let workerHost = "https://rotate-image.rotate-image.workers.dev"; 
-                    
-                    let workerUrl = workerHost + "/proxy?url=" + encodedUrl + "&v=TEST_V1";
-                    
+                    data.push(imgUrl);
                 }
             }
         }
+        
         return Response.success(data);
     }
     return null;
