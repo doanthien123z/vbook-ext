@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "name": "DamCoNuong",
+    "author": "vBook",
+    "version": 1,
+    "source": "https://damconuong.onl",
+    "regexp": "damconuong\\.onl/.*",
+    "description": "Đọc truyện tranh tại damconuong.onl",
+    "locale": "vi_VN",
+    "language": "javascript",
+    "type": "comic",
+    "tag": "nsfw"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "search": "search.js",
+    "detail": "detail.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}
