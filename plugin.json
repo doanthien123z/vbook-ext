@@ -60,7 +60,7 @@
             "locale": "vi_VN"
         },
         {
-            "name": "Trxs",
+            "name": "trxs",
             "author": "doanthien123z",
             "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/trxs/plugin.zip",
             "version": 1,
