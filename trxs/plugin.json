@@ -2,7 +2,7 @@
   "metadata": {
     "name": "trxs",
     "author": "doanthien123z",
-    "version": 2,
+    "version": 1,
     "source": "https://trxs.cc",
     "regexp": "(www\\.)?trxs\\.cc",
     "description": "Đọc tiểu thuyết tại trxs",

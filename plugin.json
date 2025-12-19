@@ -63,7 +63,7 @@
             "name": "trxs",
             "author": "doanthien123z",
             "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/trxs/plugin.zip",
-            "version": 2,
+            "version": 1,
             "source": "https://trxs.cc",
             "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/trxs/icon.png",
             "description": "Đọc tiểu thuyết trên trxs",
