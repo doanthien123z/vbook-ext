@@ -58,6 +58,17 @@
             "description": "Đọc truyện tranh trên Dâm Cô Nương",
             "type": "comic",
             "locale": "vi_VN"
+        },
+        {
+            "name": "Trxs",
+            "author": "doanthien123z",
+            "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/trxs/plugin.zip",
+            "version": 1,
+            "source": "https://trxs.cc",
+            "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/trxs/icon.png",
+            "description": "Đọc tiểu thuyết trên trxs",
+            "type": "novel",
+            "locale": "zh_CN"
         }
     ]
 }
