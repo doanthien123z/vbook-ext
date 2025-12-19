@@ -8,7 +8,7 @@
     "description": "Đọc tiểu thuyết tại trxs",
     "local": "zh-CN",
     "language": "javascript",
-    "type": "novel"
+    "type": "chinese_novel"
   },
   "script": {
     "home": "home.js",
