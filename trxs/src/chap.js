@@ -8,7 +8,6 @@ function execute(url) {
         var htm = doc.select(".read_chapterDetail").html();
         
         if (htm) {
-            // Xóa script, style và các thành phần không mong muốn
             htm = htm.replace(/<script\b[^>]*>([\s\S]*?)<\/script>/gim, "")
                      .replace(/<style\b[^>]*>([\s\S]*?)<\/style>/gim, "");
         }
