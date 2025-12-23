@@ -2,7 +2,7 @@
   "metadata": {
     "name": "JMD",
     "author": "doanthien123z",
-    "version": 1,
+    "version": 2,
     "source": "https://jmd8.com",
     "regexp": "jmd8\\.com/.*",
     "description": "Đọc truyện tranh trên jmd8.com",

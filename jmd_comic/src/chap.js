@@ -8,8 +8,20 @@ function execute(url) {
         let doc = response.html();
         let data = [];
         
-        let el = doc.select(".content div img.lazy");
+        let pageTitle = doc.select("title").text();
+        let needRotate = false;
+
+        if (typeof BROKEN_COMICS !== 'undefined' && BROKEN_COMICS.length > 0) {
+            for (var i = 0; i < BROKEN_COMICS.length; i++) {
+                if (pageTitle.toLowerCase().includes(BROKEN_COMICS[i].toLowerCase())) {
+                    needRotate = true;
+                    break;
+                }
+            }
+        }
+        // ----------------------------------------
         
+        let el = doc.select(".content div img.lazy");
         if (el.size() === 0) {
             el = doc.select(".content img[data-original]");
         }
@@ -29,6 +41,12 @@ function execute(url) {
                     !imgUrl.includes("logo") && 
                     !imgUrl.includes("icon")) {
                     
+                    if (needRotate && typeof WORKERS !== 'undefined' && WORKERS.length > 0) {
+                        let worker = WORKERS[Math.floor(Math.random() * WORKERS.length)];
+                        
+                        imgUrl = worker + "/?url=" + encodeURIComponent(imgUrl);
+                    }
+
                     data.push(imgUrl);
                 }
             }
