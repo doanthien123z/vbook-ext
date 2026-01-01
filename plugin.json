@@ -20,7 +20,7 @@
             "name": "18MH Novel",
             "author": "doanthien123z",
             "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/18mh_novel/plugin.zip",
-            "version": 2,
+            "version": 1,
             "source": "https://18mh.net/novel",
             "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/18mh_novel/icon.png",
             "description": "Đọc tiểu thuyết trên 18MH",
@@ -72,7 +72,6 @@
             "source": "https://trxs.cc",
             "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/trxs/icon.png",
             "description": "Đọc tiểu thuyết trên trxs",
-            "tag": "nsfw",
             "type": "chinese_novel",
             "locale": "zh_CN"
         }
