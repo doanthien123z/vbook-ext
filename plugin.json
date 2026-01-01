@@ -12,6 +12,7 @@
             "source": "https://www.wnacg.ru",
             "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/wnacg/icon.png",
             "description": "Đọc truyện Wnacg",
+            "tag": "nsfw",
             "type": "comic",
             "locale": "zh_CN"
         },
@@ -23,6 +24,7 @@
             "source": "https://18mh.net/novel",
             "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/18mh_novel/icon.png",
             "description": "Đọc tiểu thuyết trên 18MH",
+            "tag": "nsfw",
             "type": "chinese_novel",
             "locale": "zh_CN"
         },
@@ -34,6 +36,7 @@
             "source": "https://18mh.net/comic",
             "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/18mh_comic/icon.png",
             "description": "Đọc truyện tranh trên 18MH",
+            "tag": "nsfw",
             "type": "comic",
             "locale": "zh_CN"
         },
@@ -45,6 +48,7 @@
             "source": "https://jmd8.com",
             "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/jmd_comic/icon.png",
             "description": "Đọc truyện tranh trên jmd8.com",
+            "tag": "nsfw",
             "type": "comic",
             "locale": "zh_CN"
         },
@@ -56,6 +60,7 @@
             "source": "https://damconuong.onl",
             "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/damconuong/icon.png",
             "description": "Đọc truyện tranh trên Dâm Cô Nương",
+            "tag": "nsfw",
             "type": "comic",
             "locale": "vi_VN"
         },
@@ -67,6 +72,7 @@
             "source": "https://trxs.cc",
             "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/trxs/icon.png",
             "description": "Đọc tiểu thuyết trên trxs",
+            "tag": "nsfw",
             "type": "chinese_novel",
             "locale": "zh_CN"
         }
