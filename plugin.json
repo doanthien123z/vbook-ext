@@ -74,6 +74,18 @@
             "description": "Đọc tiểu thuyết trên trxs",
             "type": "chinese_novel",
             "locale": "zh_CN"
+        },
+        {
+            "name": "UAA Novel",
+            "author": "doanthien123z",
+            "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/uaa_novel/plugin.zip",
+            "version": 1,
+            "source": "https://uaa.novel",
+            "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/uaa_novel/icon.png",
+            "description": "Đọc tiểu thuyết trên UAA Novel",
+            "tag": "nsfw",
+            "type": "chinese_novel",
+            "locale": "zh_CN"
         }
     ]
 }
