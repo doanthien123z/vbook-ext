@@ -1,5 +1,6 @@
 load('config.js'); 
 
+
 function execute(url) {
     url = url.replace(/\/$/, "");
     let currentUrl = url;
