@@ -1,54 +1,67 @@
-load('config.js');
+load('config.js'); 
+
 
 function execute(url) {
     url = url.replace(/\/$/, "");
-    
     let currentUrl = url;
-
     let response = fetch(url);
+    
     if (response.ok) {
         let doc = response.html();
         
-        let name = doc.select('.dx-title h2').text();
+        // 1. Tên truyện
+        let name = doc.select('.detail-page__title').text().trim();
+        if (!name) name = doc.select('meta[property="og:title"]').attr('content').split('|')[0].trim();
         
+        // 2. Tác giả
         let author = "Unknown";
         let jsonLd = doc.select('script[type="application/ld+json"]').html();
         if (jsonLd) {
             try {
-                let json = JSON.parse(jsonLd);
-                if (json.author && json.author.name) author = json.author.name;
+                // Lấy block JSON chứa tác giả
+                let jsonBlocks = jsonLd.match(/\{[\s\S]*?\}/g);
+                for(let i=0; i<jsonBlocks.length; i++){
+                    let json = JSON.parse(jsonBlocks[i]);
+                    if (json.author && json.author.name) {
+                        author = json.author.name;
+                        break;
+                    }
+                }
             } catch (e) {}
         }
         if (author === "Unknown") {
-            author = doc.select('a[href*="author"]').text();
-            if (!author) {
-                 author = doc.select('span:contains(作者) + a').text();
-            }
+            author = doc.select('a[href*="/author/"]').text();
         }
 
-        let cover = doc.select('.poster img').attr('data-src');
+        // 3. Ảnh bìa
+        let cover = doc.select('.detail-page__poster-img').attr('data-src');
+        if (!cover) cover = doc.select('meta[property="og:image"]').attr('content');
         
         if (cover) {
-             if (cover.indexOf("http") === -1) cover = BASE_URL + cover;
-             cover = "https://dt123z-bypass.takiyasha123z.workers.dev/proxy?url=" + cover;
+            if (cover.indexOf("http") === -1) cover = BASE_URL + cover;
+            cover = "https://dt123z-bypass.takiyasha123z.workers.dev/proxy?url=" + cover;
         }
 
+        // 4. Mô tả
         let description = doc.select('meta[property="og:description"]').attr('content');
-        if (description) description = description.replace("小说简介：", "").trim();
+        if (description) description = description.trim();
 
-        let category = doc.select('meta[property="article:tag"]').attr("content");
+        // 5. Thể loại (Category)
+        let category = doc.select('meta[property="article:tag"]').first().attr("content") || "";
 
-        let pages = doc.select('.dx-tab-item:contains(目录)').text().replace("目录", "").replace(":", "").trim();
+        // 6. Số trang (Không thấy trong HTML, tạm bỏ qua hoặc gán mặc định)
+        let pages = doc.select('.dx-tab-item:contains(Trang)').text().replace("Trang", "").replace(":", "").trim();
+        if(!pages) pages = "Không rõ";
 
+        // 7. Nhãn (Tags/Genres)
         let genres = [];
         let tagNames = [];
         
-        let tagElements = doc.select('a[href*="/novel/tag/"]');
+        let tagElements = doc.select('.detail-page__tag');
         tagElements.forEach(e => {
-            let title = e.select('h2').text().trim();
-            if (!title) title = e.text().replace("#", "").trim();
-            
+            let title = e.text().trim();
             let href = e.attr("href");
+            
             if (title && href) {
                 if (href.indexOf("?") === -1) href += "?";
                 tagNames.push(title);
@@ -60,6 +73,7 @@ function execute(url) {
             }
         });
 
+        // 8. Định dạng HTML chi tiết
         let detailHtml = "Tên: " + name + "<br>Thể loại: " + category + "<br>Số trang: " + pages + "<br>Nhãn: " + tagNames.join(", ");
 
         return Response.success({
@@ -72,7 +86,7 @@ function execute(url) {
             genres: genres,
             suggests: [
                 {
-                    title: "Đề xuất",
+                    title: "Truyện đề xuất",
                     input: currentUrl,
                     script: "suggests.js"
                 }
