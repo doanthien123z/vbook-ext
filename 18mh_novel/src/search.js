@@ -1,76 +1,61 @@
 load('config.js');
-
 function execute(key, page) {
     if (!page) page = '1';
-    
-    var searchUrl = BASE_URL + "/novel/search?key_word=" + encodeURIComponent(key);
+    let searchUrl = BASE_URL + "/novel/search?key_word=" + encodeURIComponent(key);
     if (page !== '1') {
         searchUrl += "&page=" + page;
     }
-
-    var response = fetch(searchUrl);
-
+    let response = fetch(searchUrl);
     if (response.ok) {
-        var doc = response.html();
-        var data = [];
-
-        var elements = doc.select(".index-content li");
-        
+        let doc = response.html();
+        let data = [];
+        let elements = doc.select(".dx-novel-list li");
+        if (elements.size() === 0) elements = doc.select(".index-content li");
         elements.forEach(e => {
-            var a = e.select("a").first();
-            var link = a.attr("href");
+            let linkNode = e.select("a").first();
+            if (!linkNode) return;
+            let link = linkNode.attr("href");
             if (link.indexOf("http") === -1) link = BASE_URL + link;
-
-            var img = e.select("img").first();
-            var cover = img.attr("data-src");
-            if (!cover) cover = img.attr("src");
-            
+            let img = e.select("img").first();
+            let cover = img ? (img.attr("data-src") || img.attr("src")) : "";
             if (cover) {
                 if (cover.indexOf("http") === -1) cover = BASE_URL + cover;
-                // Proxy ảnh như bạn đã cấu hình
                 cover = "https://dt123z-bypass.takiyasha123z.workers.dev/proxy?url=" + cover;
             }
-
-            var name = "";
-            var nameNode = e.select(".truncate a").first();
-            if (nameNode) {
-                name = nameNode.text().trim();
-            } else {
-                var links = e.select("a");
-                if (links.size() > 1) {
-                    name = links.get(1).text().trim();
+            let name = e.select("h2").text().trim();
+            if (!name) name = e.select("h3").text().trim();
+            if (!name) name = e.select(".truncate").text().trim();
+            if (!name && img) name = img.attr("alt");
+            let author = e.select("a[href*=/author/]").text().trim();
+            let cat = "";
+            let catNodes = e.select("a[href*=/novel/all/]");
+            for (let i = 0; i < catNodes.size(); i++) {
+                let href = catNodes.get(i).attr("href");
+                if (href.indexOf("/author/") === -1) {
+                    cat = catNodes.get(i).text().trim();
+                    break;
                 }
             }
-            if (!name && img) name = img.attr("alt");
-
-            var description = "";
-            
-            var authorNode = e.select(".block .flex.justify-between span").first();
-            var author = authorNode ? authorNode.text().trim() : "";
-
-            var timeNode = e.select(".block .flex.items-center .mr-auto").first();
-            var time = timeNode ? timeNode.text().trim() : "";
-
-            if (author) description += author;
-            if (time) {
-                if (description) description += " | ";
-                description += time;
+            let time = e.select(".mr-auto").text().trim();
+            let descriptionArr = [];
+            if (author) descriptionArr.push(author);
+            if (cat) descriptionArr.push(cat);
+            if (time) descriptionArr.push(time);
+            let description = descriptionArr.join(" | ");
+            if (name) {
+                data.push({
+                    name: name,
+                    link: link,
+                    cover: cover,
+                    description: description,
+                    host: BASE_URL
+                });
             }
-
-            data.push({
-                name: name,
-                link: link,
-                cover: cover,
-                description: description,
-                host: BASE_URL
-            });
         });
-
-        var next = (parseInt(page) + 1).toString();
-        if (elements.size() === 0) {
-             next = null;
+        let next = null;
+        if (elements.size() > 0) {
+             next = (parseInt(page) + 1).toString();
         }
-
         return Response.success(data, next);
     }
     return null;

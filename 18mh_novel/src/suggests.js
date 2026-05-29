@@ -10,37 +10,39 @@ function execute(url) {
         let doc = response.html();
         let data = [];
 
-        let elements = doc.select("ul.grid.grid-cols-1 li");
+        let elements = doc.select("a.detail-page__hot-card");
 
         elements.forEach(e => {
-            let a = e.select("a").first();
-            let link = a.attr("href");
+            let link = e.attr("href");
             
             if (link && link.indexOf("http") === -1) {
                 link = BASE_URL + link;
             }
 
-            let img = e.select("img").first();
-            let cover = img.attr("data-src");
-            if (!cover) cover = img.attr("src");
+            let img = e.select("img.detail-page__hot-img").first();
+            if (!img) img = e.select("img").first();
+            let cover = img ? (img.attr("data-src") || img.attr("src")) : "";
             
             if (cover) {
                 if (cover.indexOf("http") === -1) cover = BASE_URL + cover;
                 cover = "https://dt123z-bypass.takiyasha123z.workers.dev/proxy?url=" + cover;
             }
 
-            let name = e.select("h3").text().trim();
-            if (!name) name = img.attr("alt");
+            let nameEl = e.select("h3.detail-page__hot-name").first();
+            if (!nameEl) nameEl = e.select("h3").first();
+            let name = nameEl ? nameEl.text().trim() : (img ? img.attr("alt") : "");
 
-            let description = e.select(".line-clamp-4").text().trim();
+            let description = "";
 
-            data.push({
-                name: name,
-                link: link,
-                cover: cover,
-                description: description,
-                host: BASE_URL
-            });
+            if (name) {
+                data.push({
+                    name: name,
+                    link: link,
+                    cover: cover,
+                    description: description,
+                    host: BASE_URL
+                });
+            }
         });
 
         return Response.success(data);

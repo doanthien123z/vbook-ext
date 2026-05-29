@@ -1,5 +1,4 @@
 load('config.js');
-
 function execute() {
     return Response.success([
         {title: "Tất cả tiểu thuyết", input: "/novel/all", script: "gen.js"},
