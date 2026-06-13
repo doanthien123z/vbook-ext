@@ -1,0 +1,25 @@
+{
+  "metadata": {
+    "name": "AADDBB",
+    "author": "doanthien123z",
+    "version": 1,
+    "source": "https://www.aaddbb.com",
+    "regexp": "https?://(www\\.)?aaddbb\\.com/.*",
+    "description": "Nguồn truyện aaddbb.com",
+    "local": "zh",
+    "language": "javascript",
+    "type": "chinese_novel",
+    "tag": "nsfw"
+  },
+  "script": {
+    "home": "home.js",
+    "gen": "gen.js",
+    "gen2": "gen2.js",
+    "gen3": "gen3.js",
+    "detail": "detail.js",
+    "toc": "toc.js",
+    "chap": "chap.js",
+    "search": "search.js",
+    "genre": "genre.js"
+  }
+}

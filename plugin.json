@@ -76,13 +76,13 @@
             "locale": "zh_CN"
         },
         {
-            "name": "aahhss",
+            "name": "AADDBB",
             "author": "doanthien123z",
-            "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/aahhss/plugin.zip",
+            "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/aaddbb/plugin.zip",
             "version": 1,
             "source": "https://aaddbb.com/",
-            "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/aahhss/icon.png",
-            "description": "Đọc tiểu thuyết trên aahhss",
+            "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/aaddbb/icon.png",
+            "description": "Đọc tiểu thuyết trên AADDBB",
             "tag": "nsfw",
             "type": "chinese_novel",
             "locale": "zh_CN"
