@@ -1,7 +1,7 @@
 {
   "metadata": {
     "name": "AAHHSS",
-    "author": "Nahona",
+    "author": "doanthien123z",
     "version": 3,
     "source": "https://www.aahhss.com/",
     "regexp": "https://(www.)aahhss.com/book/\\d+/?$",

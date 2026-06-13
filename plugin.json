@@ -76,13 +76,13 @@
             "locale": "zh_CN"
         },
         {
-            "name": "UAA Novel",
+            "name": "aahhss",
             "author": "doanthien123z",
-            "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/uaa_novel/plugin.zip",
+            "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/aahhss/plugin.zip",
             "version": 1,
-            "source": "https://uaa.novel",
-            "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/uaa_novel/icon.png",
-            "description": "Đọc tiểu thuyết trên UAA Novel",
+            "source": "https://aaddbb.com/",
+            "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/aahhss/icon.png",
+            "description": "Đọc tiểu thuyết trên aahhss",
             "tag": "nsfw",
             "type": "chinese_novel",
             "locale": "zh_CN"
