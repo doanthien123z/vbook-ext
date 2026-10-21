@@ -1,6 +1,7 @@
 load('config.js');
 
 function execute(url) {
+    url = url.replace(/^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n?]+)/img, BASE_URL);
     var response = fetch(url, {
         headers: {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
@@ -10,13 +11,13 @@ function execute(url) {
 
     if (response.ok) {
         var doc = response.html();
-        var name = doc.select("h2").text();
 
+        var name = doc.select("h2").first().text();
         var cleanName = name;
         cleanName = cleanName.replace(/(\[.*?\]|\{.*?\}|\(.*?\)|【.*?】|（.*?）)/g, " ");
         cleanName = cleanName.replace(/(vol|ch|chapter|volume)\.?\s*\d+([.,]\d+)?/gi, " ");
-        cleanName = cleanName.replace(/(第|卷|巻|話)/g, " ");
-        cleanName = cleanName.replace(/(上|中|下|完|End|Final)/gi, " ");
+        cleanName = cleanName.replace(/(第\s*\d+\s*[話话集卷])/g, " ");
+        cleanName = cleanName.replace(/(完|End|Final)/gi, " ");
         cleanName = cleanName.replace(/(\d+([.,]\d+)?(\s*[-~]\s*\d+([.,]\d+)?)?)\s*$/g, "");
         cleanName = cleanName.replace(/[:_,\-]/g, " ").trim().replace(/\s+/g, " ");
 
@@ -24,12 +25,13 @@ function execute(url) {
             cleanName = name;
         }
 
+        // Xử lý link ảnh bìa bị lỗi dạng ////t4.qy0.ru/...
         var cover = doc.select(".uwthumb img").attr("src");
         if (cover) {
             if (cover.indexOf("//") === 0) {
-                cover = "https:" + cover;
+                cover = "https://" + cover.replace(/^\/+/, "");
             } else if (cover.indexOf("http") !== 0) {
-                cover = BASE_URL + cover;
+                cover = BASE_URL + (cover.indexOf("/") === 0 ? "" : "/") + cover;
             }
         }
 
@@ -46,21 +48,24 @@ function execute(url) {
             var text = label.text();
             if (text.indexOf("分類：") !== -1) category = text.replace("分類：", "").trim();
             if (text.indexOf("頁數：") !== -1) pages = text.replace("頁數：", "").trim();
+            if (text.indexOf("章節：") !== -1) pages = text.replace("章節：", "").trim();
         });
 
         var genres = [];
         var tagNames = [];
         doc.select(".addtags a.tagshow").forEach(function(tag) {
-            var tagName = tag.text();
-            tagNames.push(tagName);
-            genres.push({
-                title: tagName,
-                input: BASE_URL + "/albums-index-page-{{page}}-tag-" + encodeURIComponent(tagName) + ".html",
-                script: "gen.js"
-            });
+            var tagName = tag.text().trim();
+            if (tagName && tagName !== "+TAG") {
+                tagNames.push(tagName);
+                genres.push({
+                    title: tagName,
+                    input: BASE_URL + "/albums-index-page-{{page}}-tag-" + encodeURIComponent(tagName) + ".html",
+                    script: "gen.js"
+                });
+            }
         });
 
-        var detailHtml = "Tên: " + name + "<br>Thể loại: " + category + "<br>Số trang: " + pages + "<br>Nhãn: " + tagNames.join(", ") + "<br>Tìm kiếm nhanh: " + author + " | " + cleanName;
+        var detailHtml = "Tên: " + name + "<br>Thể loại: " + category + "<br>Thời lượng: " + pages + "<br>Nhãn: " + tagNames.join(", ") + "<br>Tìm kiếm nhanh: " + author + " | " + cleanName;
         var description = doc.select(".uwconn p").html().replace("簡介：", "");
 
         return Response.success({
