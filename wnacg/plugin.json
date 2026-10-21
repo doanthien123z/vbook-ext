@@ -2,7 +2,7 @@
   "metadata": {
     "name": "Wnacg",
     "author": "doanthien123z",
-    "version": 2,
+    "version": 1,
     "source": "https://www.wnacg.ru",
     "regexp": "www\\.wnacg\\.ru/photos-index-aid-\\d+\\.html",
     "description": "Đọc truyện Wnacg",

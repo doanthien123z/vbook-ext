@@ -53,18 +53,6 @@
             "locale": "zh_CN"
         },
         {
-            "name": "DamCoNuong",
-            "author": "doanthien123z",
-            "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/damconuong/plugin.zip",
-            "version": 1,
-            "source": "https://damconuong.onl",
-            "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/damconuong/icon.png",
-            "description": "Đọc truyện tranh trên Dâm Cô Nương",
-            "tag": "nsfw",
-            "type": "comic",
-            "locale": "vi_VN"
-        },
-        {
             "name": "trxs",
             "author": "doanthien123z",
             "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/trxs/plugin.zip",
@@ -86,6 +74,18 @@
             "tag": "nsfw",
             "type": "chinese_novel",
             "locale": "zh_CN"
+        },
+        {
+            "name": "AllPornComic",
+            "author": "doanthien123z",
+            "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/allporncomic/plugin.zip",
+            "version": 1,
+            "source": "https://allporncomic.com",
+            "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/allporncomic/icon.png",
+            "description": "Đọc truyện tranh trên AllPornComic",
+            "tag": "nsfw",
+            "type": "comic",
+            "locale": "en_US"
         }
     ]
 }

@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "name": "AllPornComic",
+    "author": "doanthien123z",
+    "version": 1,
+    "source": "https://allporncomic.com",
+    "regexp": "(www\\.)?allporncomic\\.com/porncomic/[^/]+/?$",
+    "description": "Đọc truyện tranh trên allporncomic.com",
+    "language": "javascript",
+    "type": "comic",
+    "tag": "nsfw"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "detail": "detail.js",
+    "toc": "toc.js",
+    "chap": "chap.js",
+    "search": "search.js"
+  }
+}
