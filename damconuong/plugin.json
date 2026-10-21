@@ -1,0 +1,22 @@
+{
+  "metadata": {
+    "name": "DamCoNuong",
+    "author": "doanthien123z",
+    "version": 2,
+    "source": "https://damconuong.win",
+    "regexp": "damconuong\\.win/.*",
+    "description": "Đọc truyện tranh tại damconuong.win",
+    "locale": "vi_VN",
+    "language": "javascript",
+    "type": "comic",
+    "tag": "nsfw"
+  },
+  "script": {
+    "home": "home.js",
+    "genre": "genre.js",
+    "search": "search.js",
+    "detail": "detail.js",
+    "toc": "toc.js",
+    "chap": "chap.js"
+  }
+}

@@ -53,6 +53,18 @@
             "locale": "zh_CN"
         },
         {
+            "name": "DamCoNuong",
+            "author": "doanthien123z",
+            "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/damconuong/plugin.zip",
+            "version": 2,
+            "source": "https://damconuong.com",
+            "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/damconuong/icon.png",
+            "description": "Đọc truyện trên DamCoNuong",
+            "tag": "nsfw",
+            "type": "comic",
+            "locale": "vi_VN"
+        },
+        {
             "name": "trxs",
             "author": "doanthien123z",
             "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/trxs/plugin.zip",
