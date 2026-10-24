@@ -56,7 +56,7 @@
             "name": "DamCoNuong",
             "author": "doanthien123z",
             "path": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/damconuong/plugin.zip",
-            "version": 2,
+            "version": 3,
             "source": "https://damconuong.com",
             "icon": "https://raw.githubusercontent.com/doanthien123z/vbook-ext/main/damconuong/icon.png",
             "description": "Đọc truyện trên DamCoNuong",
