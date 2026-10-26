@@ -9,8 +9,23 @@ function execute(url) {
         el.forEach(e => {
             let link = e.attr("href");
             if (link.indexOf("http") === -1) link = BASE_URL + link;
-            let nameEl = e.select(".detail-page__chapter-title").first();
-            let name = nameEl ? nameEl.text().trim() : e.text().trim();
+
+            let badgeEl = e.select(".detail-page__chapter-badge").first();
+            let titleEl = e.select(".detail-page__chapter-title").first();
+            let badge = badgeEl ? badgeEl.text().trim() : "";
+            let title = titleEl ? titleEl.text().trim() : "";
+
+            if (!badge) {
+                let no = e.attr("data-chapter-no");
+                if (no) badge = "第" + no + "章";
+            }
+
+            let name = (badge + " " + title).trim();
+            if (!name) {
+                let left = e.select(".detail-page__catalog-left").first();
+                name = left ? left.text().trim() : e.text().trim();
+            }
+
             chapters.push({
                 name: name,
                 url: link,

@@ -2,7 +2,7 @@
   "metadata": {
     "name": "DamCoNuong",
     "author": "doanthien123z",
-    "version": 3,
+    "version": 4,
     "source": "https://damconuong.win",
     "regexp": "damconuong\\.win/.*",
     "description": "Đọc truyện tranh tại damconuong.win",
