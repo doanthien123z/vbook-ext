@@ -6,6 +6,16 @@ function execute() {
         {title: "Tiểu Vũ", input: "/novel/search?key_word=小舞", script: "gen.js"},
         {title: "Ninh Vinh Vinh", input: "/novel/search?key_word=宁荣荣", script: "gen.js"},
         {title: "Đấu Phá", input: "/novel/search?key_word=斗破", script: "gen.js"},
+
+        {title: "师尊", input: "/novel/search?key_word=师尊", script: "gen.js"},
+        {title: "师父", input: "/novel/search?key_word=师父", script: "gen.js"},
+        {title: "师姐", input: "/novel/search?key_word=师姐", script: "gen.js"},
+        {title: "师妹", input: "/novel/search?key_word=师妹", script: "gen.js"},
+        {title: "母亲", input: "/novel/search?key_word=母亲", script: "gen.js"},
+        {title: "姐姐", input: "/novel/search?key_word=姐姐", script: "gen.js"},
+
+
+
         {title: "都市激情", input: "/novel/all/dsjq", script: "gen.js"},
         {title: "校园春色", input: "/novel/all/xycs", script: "gen.js"},
         {title: "乡村爱情", input: "/novel/all/xcaq", script: "gen.js"},

@@ -1,8 +1,8 @@
 {
   "metadata": {
     "name": "18MH Novel",
-    "author": "doanthien123z",
-    "version": 4,
+    "author": "doan5hien123z",
+    "version": 5,
     "source": "https://18mh.net",
     "regexp": "(www.)?18mh.net/.*",
     "description": "Đọc tiểu thuyết tại 18mh.net",
