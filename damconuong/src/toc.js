@@ -21,7 +21,8 @@ function execute(url) {
         for (let i = 0; i < el.size(); i++) {
             let e = el.get(i);
             let link = e.attr("href");
-            if (!link || link.indexOf("/chapter-") < 0) continue;
+            // Site hiện dùng /truyen/<slug>/chap-19 (trước đây là /chapter-19)
+            if (!link || !/\/chap(ter)?-\d/.test(link)) continue;
             if (link.indexOf("http") < 0) link = BASE_URL + link;
             link = link.replace(/#.*$/, "");
             if (seen[link]) continue;
@@ -32,8 +33,8 @@ function execute(url) {
             if (!name) name = e.select(".text-ellipsis").text().trim();
             if (!name) name = e.text().trim();
 
-            // Slug dạng chapter-103-2 / chapter-75-5: thêm phần lẻ vào tên để không bị trùng tên
-            let m = link.match(/\/chapter-(\d+)-(\d+)$/);
+            // Slug dạng chap-103-2 / chapter-75-5: thêm phần lẻ vào tên để không bị trùng tên
+            let m = link.match(/\/chap(?:ter)?-(\d+)-(\d+)$/);
             if (m) {
                 let full = m[1] + "." + m[2];
                 if (name.indexOf(full) < 0) name = name + " (" + full + ")";
